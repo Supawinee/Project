@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5EE"
+    tools:context="com.example.supawinee.smartlightforsmarthome.NormalPage"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="NETPIE STATUS: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:text=" Not Connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textColor="@android:color/holo_red_light" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color Control"
+        android:id="@+id/headtext"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:textColor="#660033"
+        />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/red_status"
+        android:textColor="#FF0000"
+        android:layout_marginTop="20dp"/>
+
+    <SeekBar
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar_red"
+        android:max="255"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/green_status"
+        android:textColor="#006400"
+        android:layout_marginTop="20dp"/>
+
+    <SeekBar
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar_green"
+        android:layout_marginTop="15dp"
+        android:max="255" />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/blue_status"
+        android:textColor="#0000FF"
+        android:layout_marginTop="20dp"/>
+
+    <SeekBar
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/seekBar_blue"
+        android:max="255" />
+
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="SUBMIT"
+        android:id="@+id/btn_submit"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/my_button"
+        android:textColor="#B03060"
+
+        />
+
+
+</LinearLayout>

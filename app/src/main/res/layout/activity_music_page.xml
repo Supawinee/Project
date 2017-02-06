@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_music_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF5EE"
+    tools:context="com.example.supawinee.smartlightforsmarthome.MusicPage"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:text="NETPIE STATUS: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:text=" Not Connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/netpie_status_Music"
+            android:textColor="@android:color/holo_red_light" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MUSIC MODE"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#660033"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_music_note_black_24dp"
+        android:id="@+id/imageView2"
+        android:layout_weight="0.30" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ON"
+        android:textSize="20dp"
+        android:onClick="btn_MusicON"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/my_button"
+        android:textColor="#B03060"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OFF"
+        android:textSize="20dp"
+        android:onClick="btn_MusicOFF"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/my_button"
+        android:textColor="#B03060"/>
+
+</LinearLayout>
+

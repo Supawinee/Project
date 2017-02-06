@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF5EE"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#FFF5EE"
+        android:layout_marginTop="50dp">
+        <NumberPicker
+            android:id="@+id/hourPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFF5EE"
+
+            />
+
+        <NumberPicker
+            android:id="@+id/minutePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFF5EE"
+            />
+
+        <NumberPicker
+            android:id="@+id/secondPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFF5EE"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#FFF5EE"
+        android:layout_marginTop="30dp">
+
+        <Button
+
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/set_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set"
+            android:layout_alignBaseline="@+id/cancel_btn"
+            android:layout_alignBottom="@+id/cancel_btn"
+            android:layout_alignRight="@+id/hourPicker"
+            android:layout_alignEnd="@+id/hourPicker"
+            android:layout_marginRight="5dp"
+            android:background="#FF9999"
+            android:textColor="#B03060"/>
+
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/minutePicker"
+            android:layout_toEndOf="@+id/minutePicker"
+            android:layout_marginLeft="5dp"
+            android:background="#FF9999"
+            android:textColor="#B03060"/>
+
+    </LinearLayout>
+
+</LinearLayout>

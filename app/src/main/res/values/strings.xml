@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LIGHT ME UP!</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="theme_array">
+        <item>Red blink</item>
+        <item>Blue blink</item>
+        <item>Green blink</item>
+        <item>White blink</item>
+        <item>Flash</item>
+    </string-array>
+
+    <string-array name="sound_array">
+        <item>Random  sound!</item>
+        <item>Alarm clock Sound</item>
+        <item>Birds Sound</item>
+        <item>Rooster Crowing Sound</item>
+        <item>Waterfall Sound</item>
+        <item>Wave Sound</item>
+    </string-array>
+
+</resources>
