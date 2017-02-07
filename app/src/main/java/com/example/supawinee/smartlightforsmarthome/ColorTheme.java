@@ -1,5 +1,6 @@
 package com.example.supawinee.smartlightforsmarthome;
 
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -95,18 +96,12 @@ public class ColorTheme extends AppCompatActivity implements AdapterView.OnItemS
     /////////////////// Submit Button Action ////////////////////////
     public void submit_ColorTheme(View view){
         txtChoose.setText(strchoose);
+        txtChoose.setTextColor(Color.GRAY);
         microgear.chat("switch","ct:" + theme_to_netpie + ":--:--");
-        microgear.chat("middle","controler:ct:" + theme_to_netpie + ":--:--");
         Log.i("Color Theme send","ct:" + theme_to_netpie + ":--:--");
 
     }
 
-    public void stop_ColorTheme(View view){
-        microgear.chat("switch","cc:0:0:0");
-        microgear.chat("middle","controler:cc:0:0:0");
-        Log.i("Color Theme send"," Stop");
-
-    }
 
 
     @Override

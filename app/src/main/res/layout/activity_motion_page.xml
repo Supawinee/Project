@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MOTION MODE"
+        android:text="MOTION SENSOR MODE"
         android:textAlignment="center"
         android:textSize="30dp"
         android:layout_marginTop="30dp"

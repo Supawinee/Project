@@ -61,6 +61,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/theme_choose"
+            android:textColor="#FFF5EE"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -85,16 +86,7 @@
         android:background="@drawable/my_button"
         android:textColor="#B03060"/>
 
-    <Button
-        android:text="STOP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="stop_ColorTheme"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/my_button"
-        android:textColor="#B03060"/>
+
 
 
 </LinearLayout>

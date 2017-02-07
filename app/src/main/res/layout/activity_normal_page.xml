@@ -35,65 +35,36 @@
         android:layout_height="wrap_content"
         android:text="Color Control"
         android:id="@+id/headtext"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="0dp"
         android:textSize="30dp"
         android:textColor="#660033"
         />
 
+    <com.larswerkman.holocolorpicker.ColorPicker
+        android:id="@+id/picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <com.larswerkman.holocolorpicker.SVBar
+        android:id="@+id/svbar"
+        android:layout_width="322dp"
+        android:layout_height="112dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dip"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <TextView
-        android:layout_marginLeft="20dp"
+        android:id="@+id/textExample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/red_status"
-        android:textColor="#FF0000"
-        android:layout_marginTop="20dp"/>
-
-    <SeekBar
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar_red"
-        android:max="255"
-        android:layout_marginTop="10dp" />
-
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/green_status"
-        android:textColor="#006400"
-        android:layout_marginTop="20dp"/>
-
-    <SeekBar
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar_green"
-        android:layout_marginTop="15dp"
-        android:max="255" />
-
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/blue_status"
-        android:textColor="#0000FF"
-        android:layout_marginTop="20dp"/>
-
-    <SeekBar
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:id="@+id/seekBar_blue"
-        android:max="255" />
-
-
-
-
+        android:text="Example"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="#FFF5EE"
+        android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
@@ -102,11 +73,10 @@
         android:id="@+id/btn_submit"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/my_button"
         android:textColor="#B03060"
-
         />
 
-
+    </LinearLayout>
 </LinearLayout>

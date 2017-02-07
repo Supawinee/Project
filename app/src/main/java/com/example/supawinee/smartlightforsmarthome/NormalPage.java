@@ -16,10 +16,14 @@ import android.app.Activity;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 
+import com.larswerkman.holocolorpicker.ColorPicker;
+import com.larswerkman.holocolorpicker.OpacityBar;
+import com.larswerkman.holocolorpicker.SVBar;
+
 import io.netpie.microgear.Microgear;
 import io.netpie.microgear.MicrogearEventListener;
 
-public class NormalPage extends AppCompatActivity implements View.OnClickListener{
+public class NormalPage extends AppCompatActivity implements View.OnClickListener , ColorPicker.OnColorChangedListener{
     /////////////////// NETPIE /////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
     private String appid = "ProjectSmartLED"; //APP_ID
@@ -30,19 +34,10 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
 
     private Button submit;
 
-    //private TextView textStatus;
-    //private TextView colorPreview;
-    //for RED Seek Bar
-    private SeekBar Seek_red;
-    private TextView textRed;
-
-    //for GREEN Seek Bar
-    private SeekBar Seek_green;
-    private TextView textGreen;
-
-    //for BLUE Seek Bar
-    private SeekBar Seek_blue;
-    private TextView textBlue;
+    private ColorPicker picker;
+    private SVBar svBar;
+    private OpacityBar opacityBar;
+    private TextView text;
 
 
 
@@ -62,6 +57,9 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal_page);
 
+        submit = (Button)findViewById(R.id.btn_submit);
+        submit.setOnClickListener(this);
+
         ///////////////////////////NETPIE///////////////////////
         MicrogearCallBack callback = new MicrogearCallBack();
         microgear.resettoken();
@@ -71,109 +69,17 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
         microgear.subscribe("/chat");
 
 
+        ////////////////////////// COLOR PICKER /////////////////
+        picker = (ColorPicker) findViewById(R.id.picker);
+        svBar = (SVBar) findViewById(R.id.svbar);
+        //opacityBar = (OpacityBar) findViewById(R.id.opacitybar);
+        text = (TextView) findViewById(R.id.textExample);
 
-        /////////// TEXT STATUS ///////////////////
-        //textStatus = (TextView) findViewById(R.id.appStatus);
-        //textStatus.setText("OFFLINE!");
-        //textStatus.setTextColor(Color.parseColor("#B22222"));
-
-
-        /////////// RED SEEKBAR MANAGEMENT ///////////////////
-        Seek_red = (SeekBar) findViewById(R.id.seekBar_red);
-        textRed = (TextView) findViewById(R.id.red_status);
-        // Initialize the textview with '0'.
-        textRed.setText("RED : " + Seek_red.getProgress() + "/" + Seek_red.getMax());
-
-        Seek_red.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-            int progress_Red = 0;
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                progress_Red = progresValue;
-                //Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                //Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                textRed.setText("RED : " + progress_Red + "/" + Seek_red.getMax());
-                //Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-        });
+        picker.addSVBar(svBar);
+        //picker.addOpacityBar(opacityBar);
+        picker.setOnColorChangedListener(this);
 
 
-
-        /////////// GREEN SEEKBAR MANAGEMENT ///////////////////
-        Seek_green = (SeekBar) findViewById(R.id.seekBar_green);
-        textGreen = (TextView) findViewById(R.id.green_status);
-        // Initialize the textview with '0'.
-        textGreen.setText("GREEN : " + Seek_green.getProgress() + "/" + Seek_green.getMax());
-
-        Seek_green.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-            int progress_Green = 0;
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                progress_Green = progresValue;
-                //Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                //Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                textGreen.setText("GREEN : " + progress_Green + "/" + Seek_green.getMax());
-                //Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-        /////////// BLUE SEEKBAR MANAGEMENT ///////////////////
-        Seek_blue = (SeekBar) findViewById(R.id.seekBar_blue);
-        textBlue = (TextView) findViewById(R.id.blue_status);
-        // Initialize the textview with '0'.
-        textBlue.setText("BLUE : " + Seek_blue.getProgress() + "/" + Seek_blue.getMax());
-
-        Seek_blue.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-            int progress_Blue = 0;
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                progress_Blue = progresValue;
-
-                //Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                //Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                textBlue.setText("BLUE : " + progress_Blue + "/" + Seek_blue.getMax());
-                //Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-
-
-
-
-        submit = (Button)findViewById(R.id.btn_submit);
-        submit.setOnClickListener(this);
     }
 
 
@@ -194,13 +100,23 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
     /////////////////////////// SUBMIT - BUTTON /////////////////////////
     @Override
     public void onClick(View v) {
-        String color = Seek_red.getProgress() +":"+ Seek_green.getProgress() +":"+ Seek_blue.getProgress();
-        microgear.chat("switch","cc:" + color);
-        microgear.chat("middle","controler:cc:" + color);
-        Log.i("Color is ", color);
+        text.setTextColor(picker.getColor());
+        int red = Color.red(picker.getColor());
+        int green = Color.green(picker.getColor());
+        int blue = Color.blue(picker.getColor());
+        String color_picker = red + ":" + green +  ":" + blue;
+        text.setText(color_picker);
+        picker.setOldCenterColor(picker.getColor());
+        microgear.chat("switch","cc:" + color_picker);
+        Log.i("Color is ", color_picker);
 
 
 
+
+    }
+
+    @Override
+    public void onColorChanged(int color) {
 
     }
 

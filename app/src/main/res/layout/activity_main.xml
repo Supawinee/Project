@@ -77,7 +77,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MUSIC"
+            android:text="AMBIAN SOUND"
             android:textSize="20dp"
             android:id="@+id/btn_musicmode"
             android:layout_marginTop="20dp"
@@ -90,7 +90,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MOTION"
+            android:text="MOTION SENSOR"
             android:textSize="20dp"
             android:id="@+id/btn_motionmode"
             android:layout_marginTop="20dp"
