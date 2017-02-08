@@ -8,6 +8,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -18,6 +19,10 @@ import io.netpie.microgear.MicrogearEventListener;
 
 public class MotionPage extends AppCompatActivity  {
 
+
+    // For Change image dynamic
+    ImageView motionPic;
+
     /////////////////// NETPIE /////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
     private String appid = "ProjectSmartLED"; //APP_ID
@@ -25,9 +30,6 @@ public class MotionPage extends AppCompatActivity  {
     private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
 
-
-    private Button motionON;
-    private Button motionOFF;
 
 
 
@@ -57,6 +59,10 @@ public class MotionPage extends AppCompatActivity  {
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
 
+
+        // For Change image dynamic
+        motionPic = (ImageView) findViewById(R.id.picMotion);
+
     }
 
 
@@ -78,14 +84,16 @@ public class MotionPage extends AppCompatActivity  {
     /////////////////////////// ON/OFF - BUTTON /////////////////////////
     public  void btn_MotionON (View view){
         microgear.chat("switch","mm:ON:-:-");
-        microgear.chat("middle","controler:mm:ON:-:-");
         Log.i("Send ", "ON");
+        // For Change image dynamic
+        motionPic.setImageResource(R.drawable.picmotionon);
     }
 
     public  void btn_MotionOFF (View view){
         microgear.chat("switch","mm:OFF:-:-");
-        microgear.chat("middle","controler:mm:ON:-:-");
         Log.i("Send ", "OFF");
+        // For Change image dynamic
+        motionPic.setImageResource(R.drawable.picmotionoff);
     }
 
     class MicrogearCallBack implements MicrogearEventListener{

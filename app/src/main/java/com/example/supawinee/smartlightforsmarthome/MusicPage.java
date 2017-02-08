@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -16,6 +17,10 @@ import io.netpie.microgear.Microgear;
 import io.netpie.microgear.MicrogearEventListener;
 
 public class MusicPage extends AppCompatActivity {
+
+    // For Change image dynamic
+    ImageView musicPic;
+
 
     /////////////////// NETPIE /////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
@@ -50,6 +55,8 @@ public class MusicPage extends AppCompatActivity {
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
 
+        // For Change image dynamic
+        musicPic = (ImageView) findViewById(R.id.picMusicOFF);
     }
 
 
@@ -71,11 +78,15 @@ public class MusicPage extends AppCompatActivity {
     public  void btn_MusicON (View view){
          microgear.chat("switch","mc:ON:-:-");
         Log.i("MusicMode Send ", "ON");
+        // For Change image dynamic
+        musicPic.setImageResource(R.drawable.picmusicon);
     }
 
     public  void btn_MusicOFF (View view){
         microgear.chat("switch","mc:OFF:-:-");
         Log.i("MusicMode Send ", "OFF");
+        // For Change image dynamic
+        musicPic.setImageResource(R.drawable.picmusicoff);
     }
 
 

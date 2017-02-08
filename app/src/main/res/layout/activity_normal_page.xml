@@ -26,6 +26,8 @@
             android:id="@+id/textView"
             android:textColor="@android:color/holo_red_light" />
 
+
+
     </LinearLayout>
 
 
@@ -33,11 +35,22 @@
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color Control"
+        android:text="RGB Color Control"
         android:id="@+id/headtext"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:textSize="30dp"
         android:textColor="#660033"
+        />
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select the color on the color wheel. Then, adjust its brightness using the slider bar."
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:textColor="#708090"
         />
 
     <com.larswerkman.holocolorpicker.ColorPicker
@@ -52,19 +65,12 @@
         android:layout_height="112dp"
         android:layout_gravity="center"
         android:layout_margin="8dip"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <TextView
-        android:id="@+id/textExample"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Example"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textColor="#FFF5EE"
-        android:layout_weight="1" />
+
 
     <Button
         android:layout_width="match_parent"

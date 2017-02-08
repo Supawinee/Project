@@ -37,7 +37,7 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
     private ColorPicker picker;
     private SVBar svBar;
     private OpacityBar opacityBar;
-    private TextView text;
+
 
 
 
@@ -73,7 +73,7 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
         picker = (ColorPicker) findViewById(R.id.picker);
         svBar = (SVBar) findViewById(R.id.svbar);
         //opacityBar = (OpacityBar) findViewById(R.id.opacitybar);
-        text = (TextView) findViewById(R.id.textExample);
+
 
         picker.addSVBar(svBar);
         //picker.addOpacityBar(opacityBar);
@@ -100,12 +100,12 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
     /////////////////////////// SUBMIT - BUTTON /////////////////////////
     @Override
     public void onClick(View v) {
-        text.setTextColor(picker.getColor());
+        //text.setTextColor(picker.getColor());
         int red = Color.red(picker.getColor());
         int green = Color.green(picker.getColor());
         int blue = Color.blue(picker.getColor());
         String color_picker = red + ":" + green +  ":" + blue;
-        text.setText(color_picker);
+        //text.setText(color_picker);
         picker.setOldCenterColor(picker.getColor());
         microgear.chat("switch","cc:" + color_picker);
         Log.i("Color is ", color_picker);

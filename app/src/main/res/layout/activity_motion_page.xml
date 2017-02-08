@@ -35,7 +35,25 @@
         android:textAlignment="center"
         android:textSize="30dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
         android:textColor="#660033"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/picmotionoff"
+        android:id="@+id/picMotion"
+        android:layout_weight="0.30" />
+
+
+    </LinearLayout>
+
 
     <Button
         android:layout_width="match_parent"
@@ -43,7 +61,7 @@
         android:text="ON"
         android:textSize="20dp"
         android:onClick="btn_MotionON"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/my_button"
