@@ -117,6 +117,17 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onColorChanged(int color) {
+        /*
+
+        ///////// FOR REAL TIME COLOR CHANGE ///////
+
+        picker.setOldCenterColor(picker.getColor());
+        int red = Color.red(picker.getColor());
+        int green = Color.green(picker.getColor());
+        int blue = Color.blue(picker.getColor());
+        String color_picker = red + ":" + green +  ":" + blue;
+        microgear.chat("switch","cc:" + color_picker);
+        Log.i("Color is ", color_picker);                   */
 
     }
 
