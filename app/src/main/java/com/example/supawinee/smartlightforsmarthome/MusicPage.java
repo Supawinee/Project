@@ -29,9 +29,6 @@ public class MusicPage extends AppCompatActivity {
 
     /////////////////// NETPIE /////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
-    private String appid = "ProjectSmartLED"; //APP_ID
-    private String key = "BmitkaYVacPuhcr"; //KEY
-    private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
 
     ///////////////////////////NETPIE///////////////////////

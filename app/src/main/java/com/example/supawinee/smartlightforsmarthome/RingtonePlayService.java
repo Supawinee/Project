@@ -33,13 +33,10 @@ public class RingtonePlayService extends Service {
 
     ///////////////////////// NETPIE PART /////////////////////////////////////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
-    private String appid = "ProjectSmartLED"; //APP_ID
-    private String key = "BmitkaYVacPuhcr"; //KEY
-    private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
 
 
-    private String theme_to_netpie; //----------------------------------------------- NETPIE THEME
+    
 
 
 
