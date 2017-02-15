@@ -12,10 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener  {
 
-
+    ///// TEST
+    private ImageView image_test;
 
     ////////////////////////// All Main Button
     private Button btn_Normalmode;
@@ -30,6 +32,14 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+
+        // TEST
+        image_test = (ImageView) findViewById(R.id.imageTest);
+        image_test.setOnClickListener(this);
 
 
 
@@ -88,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
             case R.id.btn_motionmode:
                 Intent intent5 = new Intent(this,MotionPage.class);
                 startActivity(intent5);
+                break;
+            case R.id.imageTest: ///////////////////////////////////////////// FOR TEST
+                Intent intent6 = new Intent(this,SettingPage.class);
+                startActivity(intent6);
                 break;
 
 

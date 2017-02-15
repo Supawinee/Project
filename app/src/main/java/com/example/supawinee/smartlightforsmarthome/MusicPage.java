@@ -1,5 +1,7 @@
 package com.example.supawinee.smartlightforsmarthome;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Color;
@@ -20,6 +22,9 @@ public class MusicPage extends AppCompatActivity {
 
     // For Change image dynamic
     ImageView musicPic;
+
+    //  Shared Preferences
+    SharedPreferences sp;
 
 
     /////////////////// NETPIE /////////////////////////////////////////
@@ -47,10 +52,17 @@ public class MusicPage extends AppCompatActivity {
         setContentView(R.layout.activity_music_page);
 
 
+
+        //  Shared Preferences
+        sp = getSharedPreferences("App_Setting", Context.MODE_PRIVATE);
+        String APPID_SP = sp.getString("AppID", "");
+        String KEY_SP = sp.getString("key", "");
+        String SECRET_SP = sp.getString("Secret", "");
+
         ///////////////////////////NETPIE///////////////////////
         MusicPage.MicrogearCallBack callback = new MusicPage.MicrogearCallBack();
         microgear.resettoken();
-        microgear.connect(appid, key, secret, alias);
+        microgear.connect(APPID_SP,KEY_SP,SECRET_SP,alias);
         microgear.setCallback(callback);
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
@@ -76,14 +88,18 @@ public class MusicPage extends AppCompatActivity {
 
     /////////////////////////// ON/OFF - BUTTON /////////////////////////
     public  void btn_MusicON (View view){
-         microgear.chat("switch","mc:ON:-:-");
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+         microgear.chat(Alias_SP, "mc:ON:-:-");
         Log.i("MusicMode Send ", "ON");
         // For Change image dynamic
         musicPic.setImageResource(R.drawable.picmusicon);
     }
 
     public  void btn_MusicOFF (View view){
-        microgear.chat("switch","mc:OFF:-:-");
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+        microgear.chat(Alias_SP,"mc:OFF:-:-");
         Log.i("MusicMode Send ", "OFF");
         // For Change image dynamic
         musicPic.setImageResource(R.drawable.picmusicoff);

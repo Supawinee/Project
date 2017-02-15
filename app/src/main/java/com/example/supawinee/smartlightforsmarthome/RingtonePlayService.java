@@ -5,7 +5,9 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +24,11 @@ import io.netpie.microgear.Microgear;
 import io.netpie.microgear.MicrogearEventListener;
 
 public class RingtonePlayService extends Service {
+
+
+
+    //  Shared Preferences
+    SharedPreferences sp;
 
 
     ///////////////////////// NETPIE PART /////////////////////////////////////////////////////////////////////////
@@ -62,10 +69,19 @@ public class RingtonePlayService extends Service {
         Log.e("Sound choice is ", a_sound_choice.toString());
 
 
+
+        //  Shared Preferences
+        sp = getSharedPreferences("App_Setting", Context.MODE_PRIVATE);
+        String APPID_SP = sp.getString("AppID", "");
+        String KEY_SP = sp.getString("key", "");
+        String SECRET_SP = sp.getString("Secret", "");
+
+
+
         /////////////////////////// NETPIE //////////////////////////////////////////////////////////////////
         MicrogearCallBack callback = new MicrogearCallBack();
         microgear.resettoken();
-        microgear.connect(appid,key,secret,alias);
+        microgear.connect(APPID_SP,KEY_SP,SECRET_SP,alias);
         microgear.setCallback(callback);
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
@@ -137,31 +153,46 @@ public class RingtonePlayService extends Service {
                     media_song_ac = MediaPlayer.create(this, R.raw.alarmclock_sounds);
                     // Start the ringtone
                     media_song_ac.start();
-                    microgear.chat("switch","al:RB:0:0"); //----------------------------------------------- NETPIE THEME
+
+                    //  Shared Preferences
+                    String Alias_SP = sp.getString("Alias", "");
+                    microgear.chat(Alias_SP,"al:RB:0:0"); //----------------------------------------------- NETPIE THEME
 
                 }
                 else if(sound_number == 2){
                     media_song_ac = MediaPlayer.create(this, R.raw.bird_sounds);
                     media_song_ac.start();
-                    microgear.chat("switch","al:BB:0:0");//----------------------------------------------- NETPIE THEME
+
+                    //  Shared Preferences
+                    String Alias_SP = sp.getString("Alias", "");
+                    microgear.chat(Alias_SP, "al:BB:0:0");//----------------------------------------------- NETPIE THEME
 
                 }
                 else if(sound_number == 3){
                     media_song_ac = MediaPlayer.create(this, R.raw.roostercrowing_sounds);
                     media_song_ac.start();
-                    microgear.chat("switch","al:GB:0:0");//----------------------------------------------- NETPIE THEME
+
+                    //  Shared Preferences
+                    String Alias_SP = sp.getString("Alias", "");
+                    microgear.chat(Alias_SP, "al:GB:0:0");//----------------------------------------------- NETPIE THEME
 
                 }
                 else if(sound_number == 4){
                     media_song_ac = MediaPlayer.create(this, R.raw.waterfall_sounds);
                     media_song_ac.start();
-                    microgear.chat("switch","al:WB:0:0");//----------------------------------------------- NETPIE THEME
+
+                    //  Shared Preferences
+                    String Alias_SP = sp.getString("Alias", "");
+                    microgear.chat(Alias_SP, "al:WB:0:0");//----------------------------------------------- NETPIE THEME
 
                 }
                 else {
                     media_song_ac = MediaPlayer.create(this, R.raw.wave_sounds);
                     media_song_ac.start();
-                    microgear.chat("switch","al:FL:0:0");//----------------------------------------------- NETPIE THEME
+
+                    //  Shared Preferences
+                    String Alias_SP = sp.getString("Alias", "");
+                    microgear.chat(Alias_SP, "al:FL:0:0");//----------------------------------------------- NETPIE THEME
 
                 }
 
@@ -171,39 +202,57 @@ public class RingtonePlayService extends Service {
                 media_song_ac = MediaPlayer.create(this, R.raw.alarmclock_sounds);
                 // Start the ringtone
                 media_song_ac.start();
-                microgear.chat("switch","al:RB:0:0");//----------------------------------------------- NETPIE THEME
+
+                //  Shared Preferences
+                String Alias_SP = sp.getString("Alias", "");
+                microgear.chat(Alias_SP, "al:RB:0:0");//----------------------------------------------- NETPIE THEME
 
             }
             else if(a_sound_choice == 2){
                 media_song_ac = MediaPlayer.create(this, R.raw.bird_sounds);
                 media_song_ac.start();
-                microgear.chat("switch","al:BB:0:0");//----------------------------------------------- NETPIE THEME
+
+                //  Shared Preferences
+                String Alias_SP = sp.getString("Alias", "");
+                microgear.chat(Alias_SP, "al:BB:0:0");//----------------------------------------------- NETPIE THEME
 
 
             }
             else if(a_sound_choice == 3){
                 media_song_ac = MediaPlayer.create(this, R.raw.roostercrowing_sounds);
                 media_song_ac.start();
-                microgear.chat("switch","al:GB:0:0");//----------------------------------------------- NETPIE THEME
+
+                //  Shared Preferences
+                String Alias_SP = sp.getString("Alias", "");
+                microgear.chat(Alias_SP, "al:GB:0:0");//----------------------------------------------- NETPIE THEME
 
 
             }
             else if(a_sound_choice == 4){
                 media_song_ac = MediaPlayer.create(this, R.raw.waterfall_sounds);
                 media_song_ac.start();
-                microgear.chat("switch","al:WB:0:0");//----------------------------------------------- NETPIE THEME
+
+                //  Shared Preferences
+                String Alias_SP = sp.getString("Alias", "");
+                microgear.chat(Alias_SP, "al:WB:0:0");//----------------------------------------------- NETPIE THEME
 
             }
             else if(a_sound_choice == 5){
                 media_song_ac = MediaPlayer.create(this, R.raw.wave_sounds);
                 media_song_ac.start();
-                microgear.chat("switch","al:FL:0:0");//----------------------------------------------- NETPIE THEME
+
+                //  Shared Preferences
+                String Alias_SP = sp.getString("Alias", "");
+                microgear.chat(Alias_SP, "al:FL:0:0");//----------------------------------------------- NETPIE THEME
 
             }
             else{
                 media_song_ac = MediaPlayer.create(this, R.raw.wave_sounds);
                 media_song_ac.start();
-                microgear.chat("switch","al:FL:0:0");//----------------------------------------------- NETPIE THEME
+
+                //  Shared Preferences
+                String Alias_SP = sp.getString("Alias", "");
+                microgear.chat(Alias_SP, "al:FL:0:0");//----------------------------------------------- NETPIE THEME
 
             }
             ////////////////////// Play the sound depending on the passed sound choice id - END ///////////////// ------> PART-11
@@ -223,7 +272,10 @@ public class RingtonePlayService extends Service {
             this.isRunning = false;
             this.startId = 0;
 
-            microgear.chat("switch","cc:0:0:0");
+
+            //  Shared Preferences
+            String Alias_SP = sp.getString("Alias", "");
+            microgear.chat(Alias_SP, "cc:0:0:0");
 
 
         }

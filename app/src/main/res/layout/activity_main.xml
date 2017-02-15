@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             app:srcCompat="@mipmap/logo"
-            android:id="@+id/imageView"
+            android:id="@+id/imageTest"
             android:layout_weight="0.54" />
 
         <Button

@@ -1,5 +1,7 @@
 package com.example.supawinee.smartlightforsmarthome;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Color;
@@ -23,12 +25,19 @@ public class MotionPage extends AppCompatActivity  {
     // For Change image dynamic
     ImageView motionPic;
 
+    //  Shared Preferences
+    SharedPreferences sp;
+
+
     /////////////////// NETPIE /////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
     private String appid = "ProjectSmartLED"; //APP_ID
     private String key = "BmitkaYVacPuhcr"; //KEY
     private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
+
+
+
 
 
 
@@ -51,10 +60,17 @@ public class MotionPage extends AppCompatActivity  {
         setContentView(R.layout.activity_motion_page);
 
 
+
+        //  Shared Preferences
+        sp = getSharedPreferences("App_Setting", Context.MODE_PRIVATE);
+        String APPID_SP = sp.getString("AppID", "");
+        String KEY_SP = sp.getString("key", "");
+        String SECRET_SP = sp.getString("Secret", "");
+
 ///////////////////////////NETPIE///////////////////////
         MotionPage.MicrogearCallBack callback = new MotionPage.MicrogearCallBack();
         microgear.resettoken();
-        microgear.connect(appid, key, secret, alias);
+        microgear.connect(APPID_SP,KEY_SP,SECRET_SP,alias);
         microgear.setCallback(callback);
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
@@ -83,14 +99,18 @@ public class MotionPage extends AppCompatActivity  {
 
     /////////////////////////// ON/OFF - BUTTON /////////////////////////
     public  void btn_MotionON (View view){
-        microgear.chat("switch","mm:ON:-:-");
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+        microgear.chat(Alias_SP, "mm:ON:-:-");
         Log.i("Send ", "ON");
         // For Change image dynamic
         motionPic.setImageResource(R.drawable.picmotionon);
     }
 
     public  void btn_MotionOFF (View view){
-        microgear.chat("switch","mm:OFF:-:-");
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+        microgear.chat(Alias_SP, "mm:OFF:-:-");
         Log.i("Send ", "OFF");
         // For Change image dynamic
         motionPic.setImageResource(R.drawable.picmotionoff);

@@ -7,7 +7,9 @@ import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -33,11 +35,13 @@ public class CountdownPage extends Activity implements NumberPicker.OnValueChang
     private static final String FORMAT = "%02d:%02d:%02d";
     Ringtone ring_tone;
 
+    //  Shared Preferences
+    SharedPreferences sp;
+
+
+
     ///////////////////////// NETPIE PART ///////////////////////////////
     private Microgear microgear = new Microgear(this);
-    private String appid = "ProjectSmartLED"; //APP_ID
-    private String key = "BmitkaYVacPuhcr"; //KEY
-    private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
 
 
@@ -62,10 +66,16 @@ public class CountdownPage extends Activity implements NumberPicker.OnValueChang
         tv = (TextView) findViewById(R.id.textView1);
 
 
+        //  Shared Preferences
+        sp = getSharedPreferences("App_Setting", Context.MODE_PRIVATE);
+        String APPID_SP = sp.getString("AppID", "");
+        String KEY_SP = sp.getString("key", "");
+        String SECRET_SP = sp.getString("Secret", "");
+
         /////////////////////////// NETPIE ////////////////////////////////////////
         MicrogearCallBack callback = new MicrogearCallBack();
         microgear.resettoken();
-        microgear.connect(appid,key,secret,alias);
+        microgear.connect(APPID_SP,KEY_SP,SECRET_SP,alias);
         microgear.setCallback(callback);
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
@@ -214,8 +224,11 @@ public class CountdownPage extends Activity implements NumberPicker.OnValueChang
     public  void stopCD (View view){
         timer.cancel();
         ring_tone.stop();
-        microgear.chat("switch","cc:0:0:0");
-        microgear.chat("middle","controler:cc:0:0:0");
+
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+        microgear.chat(Alias_SP, "cc:0:0:0");
+
     }
 
 
@@ -240,8 +253,11 @@ public class CountdownPage extends Activity implements NumberPicker.OnValueChang
             // AFTER COUNTDOWN FINISH
             tv.setText("00:00:00");
             ring_tone.play();
-            microgear.chat("switch","cd:255:0:0");
-            microgear.chat("middle","controler:cd:255:0:0");
+
+            //  Shared Preferences
+            String Alias_SP = sp.getString("Alias", "");
+            microgear.chat(Alias_SP, "cd:255:0:0");
+
 
             //////////////// NOTIFICATION ///////////////////////////////////
             Intent intentAL = new Intent(CountdownPage.this, CountdownPage.class);

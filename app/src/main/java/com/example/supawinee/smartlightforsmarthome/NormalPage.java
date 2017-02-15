@@ -1,5 +1,7 @@
 package com.example.supawinee.smartlightforsmarthome;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
@@ -26,9 +28,6 @@ import io.netpie.microgear.MicrogearEventListener;
 public class NormalPage extends AppCompatActivity implements View.OnClickListener , ColorPicker.OnColorChangedListener{
     /////////////////// NETPIE /////////////////////////////////////////
     private Microgear microgear = new Microgear(this);
-    private String appid = "ProjectSmartLED"; //APP_ID
-    private String key = "BmitkaYVacPuhcr"; //KEY
-    private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
 
 
@@ -36,7 +35,11 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
 
     private ColorPicker picker;
     private SVBar svBar;
-    private OpacityBar opacityBar;
+
+
+
+    //  Shared Preferences
+    SharedPreferences sp;
 
 
 
@@ -57,13 +60,22 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal_page);
 
+
+        //  Shared Preferences
+        sp = getSharedPreferences("App_Setting", Context.MODE_PRIVATE);
+        String APPID_SP = sp.getString("AppID", "");
+        String KEY_SP = sp.getString("key", "");
+        String SECRET_SP = sp.getString("Secret", "");
+
+
+
         submit = (Button)findViewById(R.id.btn_submit);
         submit.setOnClickListener(this);
 
         ///////////////////////////NETPIE///////////////////////
         MicrogearCallBack callback = new MicrogearCallBack();
         microgear.resettoken();
-        microgear.connect(appid,key,secret,alias);
+        microgear.connect(APPID_SP,KEY_SP,SECRET_SP,alias);
         microgear.setCallback(callback);
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
@@ -72,11 +84,10 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
         ////////////////////////// COLOR PICKER /////////////////
         picker = (ColorPicker) findViewById(R.id.picker);
         svBar = (SVBar) findViewById(R.id.svbar);
-        //opacityBar = (OpacityBar) findViewById(R.id.opacitybar);
+
 
 
         picker.addSVBar(svBar);
-        //picker.addOpacityBar(opacityBar);
         picker.setOnColorChangedListener(this);
 
 
@@ -107,7 +118,11 @@ public class NormalPage extends AppCompatActivity implements View.OnClickListene
         String color_picker = red + ":" + green +  ":" + blue;
         //text.setText(color_picker);
         picker.setOldCenterColor(picker.getColor());
-        microgear.chat("switch","cc:" + color_picker);
+
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+
+        microgear.chat(Alias_SP, "cc:" + color_picker);
         Log.i("Color is ", color_picker);
 
 

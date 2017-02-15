@@ -125,17 +125,32 @@
 
     </LinearLayout>
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:gravity="center">
     <Button
-        android:text="APPLY"
-        android:layout_width="match_parent"
+        android:text="COMMIT"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_apply"
-        android:onClick="submit_ColorTheme"
-        android:layout_marginRight="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/btn_commitSetting"
+        android:onClick="commitSetting"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/my_button"
         android:textColor="#B03060"/>
+
+    <Button
+        android:text="MAIN MENU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="backmainmenu"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/my_button"
+        android:textColor="#B03060"/>
+
+</LinearLayout>
 
 </LinearLayout>

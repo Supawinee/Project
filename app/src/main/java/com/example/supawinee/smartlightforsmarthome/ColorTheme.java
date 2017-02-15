@@ -1,5 +1,7 @@
 package com.example.supawinee.smartlightforsmarthome;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
@@ -25,18 +27,14 @@ public class ColorTheme extends AppCompatActivity implements AdapterView.OnItemS
     private String strchoose;
     private String theme_to_netpie;
 
+
+    //  Shared Preferences
+    SharedPreferences sp;
+
     //////////////////////////NETPIE////////////////////////////////
 
     private Microgear microgear = new Microgear(this);
-    private String appid = "ProjectSmartLED"; //APP_ID
-    private String key = "BmitkaYVacPuhcr"; //KEY
-    private String secret = "PhEUyiYC5XPblVhqzAw9pDJMV"; //SECRET
     private String alias = "MobileApp";
-
-
-
-
-
 
 
 
@@ -61,11 +59,17 @@ public class ColorTheme extends AppCompatActivity implements AdapterView.OnItemS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_theme);
 
+        //  Shared Preferences
+        sp = getSharedPreferences("App_Setting", Context.MODE_PRIVATE);
+        String APPID_SP = sp.getString("AppID", "");
+        String KEY_SP = sp.getString("key", "");
+        String SECRET_SP = sp.getString("Secret", "");
+
 
         ///////////////////////////NETPIE///////////////////////
         MicrogearCallBack callback = new  MicrogearCallBack();
         microgear.resettoken();
-        microgear.connect(appid,key,secret,alias);
+        microgear.connect(APPID_SP,KEY_SP,SECRET_SP,alias);
         microgear.setCallback(callback);
         microgear.subscribe("Topictest");
         microgear.subscribe("/chat");
@@ -97,7 +101,11 @@ public class ColorTheme extends AppCompatActivity implements AdapterView.OnItemS
     public void submit_ColorTheme(View view){
         txtChoose.setText(strchoose);
         txtChoose.setTextColor(Color.GRAY);
-        microgear.chat("switch","ct:" + theme_to_netpie + ":--:--");
+
+        //  Shared Preferences
+        String Alias_SP = sp.getString("Alias", "");
+
+        microgear.chat(Alias_SP,"ct:" + theme_to_netpie + ":--:--");
         Log.i("Color Theme send","ct:" + theme_to_netpie + ":--:--");
 
     }
