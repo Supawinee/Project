@@ -13,7 +13,7 @@
     tools:context="com.example.supawinee.smartlightforsmarthome.SettingPage">
 
     <TextView
-        android:text="App Setting"
+        android:text="App Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30dp"

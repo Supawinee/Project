@@ -9,6 +9,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +18,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener  {
 
-    ///// TEST
-    private ImageView image_test;
+
 
     ////////////////////////// All Main Button
     private Button btn_Normalmode;
@@ -37,9 +38,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
 
 
-        // TEST
-        image_test = (ImageView) findViewById(R.id.imageTest);
-        image_test.setOnClickListener(this);
+
 
 
 
@@ -99,19 +98,39 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                 Intent intent5 = new Intent(this,MotionPage.class);
                 startActivity(intent5);
                 break;
-            case R.id.imageTest: ///////////////////////////////////////////// FOR TEST
-                Intent intent6 = new Intent(this,SettingPage.class);
-                startActivity(intent6);
-                break;
+
 
 
         }
     }
 
-
-
-
-
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_menus, menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_setting:
+                Intent intentSetting = new Intent(this,SettingPage.class);
+                startActivity(intentSetting);
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+}

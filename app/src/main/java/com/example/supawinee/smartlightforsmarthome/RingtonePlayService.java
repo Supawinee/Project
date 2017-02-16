@@ -36,7 +36,7 @@ public class RingtonePlayService extends Service {
     private String alias = "MobileApp";
 
 
-    
+
 
 
 
