@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_room_select"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallapp"
+    android:orientation="vertical"
+    tools:context="com.example.supawinee.smartlightforsmarthome.RoomSelect"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Room Selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bedroomon"
+            android:layout_marginRight="10dp"
+            android:id="@+id/imageBedroom" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/livingroomon2"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imageLivingroom" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/workingroomon"
+            android:layout_marginRight="10dp"
+            android:id="@+id/imageWorkingroom" />
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/dinningroomon"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imageDinningroom" />
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

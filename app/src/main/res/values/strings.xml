@@ -8,16 +8,21 @@
         <item>Blue blink</item>
         <item>Green blink</item>
         <item>White blink</item>
+        <item>Orange blink</item>
+        <item>Purple blink</item>
+        <item>Light blue blink</item>
+        <item>Pink blink</item>
+        <item>Yellow blink</item>
         <item>Flash</item>
     </string-array>
 
     <string-array name="sound_array">
-        <item>Random  sound!</item>
-        <item>Alarm clock Sound</item>
-        <item>Birds Sound</item>
-        <item>Rooster Crowing Sound</item>
-        <item>Waterfall Sound</item>
-        <item>Wave Sound</item>
+        <item>Random sound!</item>
+        <item>Alarm clock</item>
+        <item>Birds</item>
+        <item>Rooster Crowing</item>
+        <item>Waterfall</item>
+        <item>Wave</item>
     </string-array>
 
 </resources>

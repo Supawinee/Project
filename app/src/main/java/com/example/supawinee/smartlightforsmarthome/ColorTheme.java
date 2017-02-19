@@ -131,10 +131,32 @@ public class ColorTheme extends AppCompatActivity implements AdapterView.OnItemS
                 strchoose = "White blink";
                 theme_to_netpie = "WB";
                 break;
-            case 4:
-                strchoose = "Flash";
+            case 4: // Orange blink
+                strchoose = "Orange blink";  // --------- ยังไม่แก้
                 theme_to_netpie = "FL";
                 break;
+            case 5: // Purple blink
+                strchoose = "Purple blink";  // --------- ยังไม่แก้
+                theme_to_netpie = "FL";
+                break;
+            case 6: // Light blue blink
+                strchoose = "Light blue blink";  // --------- ยังไม่แก้
+                theme_to_netpie = "FL";
+                break;
+            case 7: // Pink blink
+                strchoose = "Pink blink";  // --------- ยังไม่แก้
+                theme_to_netpie = "FL";
+                break;
+            case 8: //
+                strchoose = "Yellow blink";  // --------- ยังไม่แก้
+                theme_to_netpie = "FL";
+                break;
+            case 9:
+                strchoose = "Flash";  // --------- ยังไม่แก้
+                theme_to_netpie = "FL";
+                break;
+
+
 
         }
     }

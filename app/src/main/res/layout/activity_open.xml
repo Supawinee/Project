@@ -10,14 +10,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:background="#FFF5EE"
+    android:background="@mipmap/wallapp"
     tools:context="com.example.supawinee.smartlightforsmarthome.Open">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:srcCompat="@mipmap/logo"
+        app:srcCompat="@mipmap/logo3"
         android:id="@+id/logo_open"
         android:onClick="logo_open"
         android:layout_weight="1" />
@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:id="@+id/textView3"
+        android:textColor="#ffffff"
         android:layout_weight="1" />
 
 

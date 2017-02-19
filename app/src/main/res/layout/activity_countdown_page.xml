@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#FFF5EE"
+    android:background="@mipmap/wallapp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:text="NETPIE STATUS: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black" />
+        android:textColor="#ffffff" />
 
         <TextView
             android:text=" Not Connect"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="00:00:00"
             android:textSize="90dp"
-            android:textColor="#660033"/>
+            android:textColor="#f5f202"/>
     </LinearLayout>
 
     <LinearLayout
@@ -60,7 +60,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="Set time"
-            android:background="@drawable/my_button"
+            android:background="#f5ca02"
             android:textColor="#B03060"/>
 
         <Button
@@ -73,7 +73,7 @@
             android:layout_centerHorizontal="true"
             android:onClick="startCD"
             android:text="Start"
-            android:background="@drawable/my_button"
+            android:background="#f5ca02"
             android:textColor="#B03060"
             />
 
@@ -87,7 +87,7 @@
             android:layout_centerHorizontal="true"
             android:onClick="stopCD"
             android:text="stop"
-            android:background="@drawable/my_button"
+            android:background="#f5ca02"
             android:textColor="#B03060"/>
 
 

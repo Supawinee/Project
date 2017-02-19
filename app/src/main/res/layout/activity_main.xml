@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF5EE"
+    android:background="@mipmap/wallapp"
     tools:context="com.example.supawinee.smartlightforsmarthome.MainActivity">
 
 
@@ -24,9 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="MAIN MENU"
-            android:id="@+id/editText"
             android:textAlignment="center"
-            android:textColor="#660033"
+            android:textColor="#ff8b2d"
             android:textSize="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"/>
@@ -34,7 +33,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            app:srcCompat="@mipmap/logo"
+            app:srcCompat="@mipmap/logo3"
             android:id="@+id/imageTest"
             android:layout_weight="0.54" />
 
@@ -47,8 +46,8 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
-            android:background="@drawable/my_button"
-            android:textColor="#B03060"/>
+            android:background="#ff6d2d"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:layout_width="match_parent"
@@ -59,8 +58,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
-            android:background="@drawable/my_button"
-            android:textColor="#B03060"/>
+            android:background="#ff9f2d"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:layout_width="match_parent"
@@ -71,8 +70,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
-            android:background="@drawable/my_button"
-            android:textColor="#B03060"/>
+            android:background="#ffc12d"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:layout_width="match_parent"
@@ -83,8 +82,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
-            android:background="@drawable/my_button"
-            android:textColor="#B03060"/>
+            android:background="#c1ff2d"
+            android:textColor="#ff6d2d"/>
 
 
         <Button
@@ -96,8 +95,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
-            android:background="@drawable/my_button"
-            android:textColor="#B03060"/>
+            android:background="#2dffb7"
+            android:textColor="#6f14cd"/>
 
 
     </LinearLayout>

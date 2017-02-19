@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +26,17 @@ public class SettingPage extends AppCompatActivity {
     EditText key_SettingEditText;
     EditText secret_SettingEditText;
     EditText alias_SettingEditText;
+
+    EditText livingRoomAlias_SettingEditText;
+    EditText workingRoomAlias_SettingEditText;
+    EditText dingingRoomAlias_SettingEditText;
+
+
+    CheckBox bedroom_check;
+    CheckBox livingroom_check;
+    CheckBox workingroom_check;
+    CheckBox diningroom_check;
+
 
     SharedPreferences sp;
     SharedPreferences.Editor editor;
@@ -91,6 +104,28 @@ public class SettingPage extends AppCompatActivity {
         });
 
 
+        /////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        // Bedroom ---------------------- CheckBox
+        bedroom_check = (CheckBox)findViewById(R.id.checkBoxBedroom);
+        bedroom_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean("BedRoomCheck", isChecked);
+
+            }
+        });
+        boolean isBedRoomCheck = sp.getBoolean("BedRoomCheck", false);
+        bedroom_check.setChecked(isBedRoomCheck);
+
+        //
+
+
+
+
         // ----- ALIAS ------------------------------------
         alias_SettingEditText = (EditText)findViewById(R.id.alias_EditText);
         alias_SettingEditText.setText(sp.getString(ALIAS, ""));
@@ -103,6 +138,89 @@ public class SettingPage extends AppCompatActivity {
                 //editor.commit();
             }
         });
+
+
+
+        ////////////////////////////////////////////////////////////////////////// ADD /////////////////////////////////////////////////////////
+
+        // ########################### Living Room ---------------------- CheckBox
+        livingroom_check = (CheckBox)findViewById(R.id.checkBoxLivingroom);
+        livingroom_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean("LivingRoomCheck", isChecked);
+
+            }
+        });
+        boolean isLivingRoomCheck = sp.getBoolean("LivingRoomCheck", false);
+        livingroom_check.setChecked(isLivingRoomCheck);
+
+        // ----- ALIAS ------------------------------------
+        livingRoomAlias_SettingEditText = (EditText)findViewById(R.id.alias_Livingroom_EditText);
+        livingRoomAlias_SettingEditText.setText(sp.getString("LivingRoomAlias",  ""));
+        livingRoomAlias_SettingEditText.addTextChangedListener(new TextWatcher() {
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            public void afterTextChanged(Editable s) {
+                editor.putString("LivingRoomAlias", s.toString());
+                //editor.commit();
+            }
+        });
+
+
+        //################################## Working Room ---------------------- CheckBox
+        workingroom_check = (CheckBox)findViewById(R.id.checkBoxWorkingroom);
+        workingroom_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean("WorkingRoomCheck", isChecked);
+
+            }
+        });
+        boolean isWorkingRoomCheck = sp.getBoolean("WorkingRoomCheck", false);
+        workingroom_check.setChecked(isWorkingRoomCheck);
+
+        // ----- ALIAS ------------------------------------
+        workingRoomAlias_SettingEditText = (EditText)findViewById(R.id.alias_Workingroom_EditText);
+        workingRoomAlias_SettingEditText.setText(sp.getString("WorkingRoomAlias",  ""));
+        workingRoomAlias_SettingEditText.addTextChangedListener(new TextWatcher() {
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            public void afterTextChanged(Editable s) {
+                editor.putString("WorkingRoomAlias", s.toString());
+                //editor.commit();
+            }
+        });
+
+
+        //################################## Dining Room ---------------------- CheckBox
+        diningroom_check = (CheckBox)findViewById(R.id.checkBoxDiningroom);
+        diningroom_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean("DiningRoomCheck", isChecked);
+
+            }
+        });
+        boolean isDiningRoomCheck = sp.getBoolean("DiningRoomCheck", false);
+        diningroom_check.setChecked(isDiningRoomCheck);
+
+        // ----- ALIAS ------------------------------------
+        dingingRoomAlias_SettingEditText = (EditText)findViewById(R.id.alias_Diningroom_EditText);
+        dingingRoomAlias_SettingEditText.setText(sp.getString("DiningRoomAlias",  ""));
+        dingingRoomAlias_SettingEditText.addTextChangedListener(new TextWatcher() {
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            public void afterTextChanged(Editable s) {
+                editor.putString("DiningRoomAlias", s.toString());
+                //editor.commit();
+            }
+        });
+
+
+
+
+
 
 
 

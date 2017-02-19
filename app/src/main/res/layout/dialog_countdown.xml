@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFF5EE"
+    android:background="#1b2939"
     android:orientation="vertical">
 
     <LinearLayout
@@ -11,13 +11,13 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:gravity="center"
-        android:background="#FFF5EE"
+        android:background="#1b2939"
         android:layout_marginTop="50dp">
         <NumberPicker
             android:id="@+id/hourPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF5EE"
+            android:background="#f5f202"
 
             />
 
@@ -25,14 +25,14 @@
             android:id="@+id/minutePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF5EE"
+            android:background="#f5f202"
             />
 
         <NumberPicker
             android:id="@+id/secondPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF5EE"
+            android:background="#f5f202"
             />
 
     </LinearLayout>
@@ -42,7 +42,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:gravity="center"
-        android:background="#FFF5EE"
+        android:background="#1b2939"
         android:layout_marginTop="30dp">
 
         <Button
@@ -58,7 +58,7 @@
             android:layout_alignRight="@+id/hourPicker"
             android:layout_alignEnd="@+id/hourPicker"
             android:layout_marginRight="5dp"
-            android:background="#FF9999"
+            android:background="#f5ca02"
             android:textColor="#B03060"/>
 
 
@@ -72,7 +72,7 @@
             android:layout_toRightOf="@+id/minutePicker"
             android:layout_toEndOf="@+id/minutePicker"
             android:layout_marginLeft="5dp"
-            android:background="#FF9999"
+            android:background="#f5ca02"
             android:textColor="#B03060"/>
 
     </LinearLayout>

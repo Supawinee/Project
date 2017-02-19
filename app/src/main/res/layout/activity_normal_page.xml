@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF5EE"
+    android:background="@mipmap/wallapp"
     tools:context="com.example.supawinee.smartlightforsmarthome.NormalPage"
     android:orientation="vertical">
 
@@ -17,7 +17,7 @@
             android:text="NETPIE STATUS: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black" />
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:text=" Not Connect"
@@ -39,7 +39,7 @@
         android:id="@+id/headtext"
         android:layout_marginTop="10dp"
         android:textSize="30dp"
-        android:textColor="#660033"
+        android:textColor="#f78a0a"
         />
 
     <TextView
@@ -80,8 +80,8 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/my_button"
-        android:textColor="#B03060"
+        android:background="#999999"
+        android:textColor="#400541"
         />
 
     </LinearLayout>

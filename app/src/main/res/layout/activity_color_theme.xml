@@ -4,12 +4,8 @@
     android:id="@+id/activity_color_theme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:background="#FFF5EE"
+    android:background="@mipmap/wallapp"
     tools:context="com.example.supawinee.smartlightforsmarthome.ColorTheme">
 
     <LinearLayout
@@ -21,7 +17,7 @@
             android:text="NETPIE STATUS: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black" />
+            android:textColor="#ffffff" />
 
         <TextView
             android:text=" Not Connect"
@@ -38,7 +34,7 @@
         android:layout_marginTop="29dp"
         android:layout_marginLeft="20dp"
         android:textSize="30dp"
-        android:textColor="#660033"/>
+        android:textColor="#35ff3a"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:textSize="20dp"
-        android:textColor="#660033"/>
+        android:textColor="#c1ff2d"/>
 
         <TextView
             android:text="Please select item"
@@ -74,6 +70,82 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner_color_theme" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Reps: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="#c1ff2d"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="10"
+            android:textColor="#dddddd"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:ems="5"
+            android:id="@+id/editText2" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:text="Speed: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        android:textColor="#c1ff2d"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="fast  "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="22dp"
+            android:textSize="15dp"
+            android:textColor="#dddddd"/>
+
+        <SeekBar
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBarSpeed"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="  slow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="22dp"
+            android:textSize="15dp"
+            android:textColor="#dddddd"/>
+
+
+    </LinearLayout>
+
+
+
+
+
     <Button
         android:text="SUBMIT"
         android:layout_width="match_parent"
@@ -83,8 +155,8 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/my_button"
-        android:textColor="#B03060"/>
+        android:background="#74fd77"
+        android:textColor="#095812"/>
 
 
 

@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:background="#FFF5EE"
+    android:background="@mipmap/wallapp"
     tools:context="com.example.supawinee.smartlightforsmarthome.AlarmclockPage">
 
 
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/update_text"
         android:textSize="20dp"
-        android:textColor="#660033"
+        android:textColor="#fd0674"
         android:layout_marginTop="10dp"
         android:textAlignment="center" />
 
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        android:textColor="#905a6a"
+        android:textColor="#febedb"
         android:layout_marginTop="5dp" />
 
     <Spinner
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/alarm_on_ac"
         android:layout_marginRight="10dp"
-        android:background="@drawable/my_button"
+        android:background="#feb2f8"
         android:textColor="#B03060"/>
 
     <Button
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/alarm_off_ac"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/my_button"
+        android:background="#feb2f8"
         android:textColor="#B03060"/>
 
 </LinearLayout>
