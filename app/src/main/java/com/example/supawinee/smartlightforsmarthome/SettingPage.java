@@ -109,8 +109,8 @@ public class SettingPage extends AppCompatActivity {
         //////////////////////////////////////////////////////////////////////////////////////////
 
 
+        // ########################### Bedroom Room ---------------------- CheckBox
 
-        // Bedroom ---------------------- CheckBox
         bedroom_check = (CheckBox)findViewById(R.id.checkBoxBedroom);
         bedroom_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -121,27 +121,21 @@ public class SettingPage extends AppCompatActivity {
         boolean isBedRoomCheck = sp.getBoolean("BedRoomCheck", false);
         bedroom_check.setChecked(isBedRoomCheck);
 
-        //
-
-
-
-
         // ----- ALIAS ------------------------------------
         alias_SettingEditText = (EditText)findViewById(R.id.alias_EditText);
-        alias_SettingEditText.setText(sp.getString(ALIAS, ""));
+        alias_SettingEditText.setText(sp.getString("BedRoomAlias", ""));
         alias_SettingEditText.addTextChangedListener(new TextWatcher() {
             public void onTextChanged(CharSequence s, int start, int before, int count) { }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             public void afterTextChanged(Editable s) {
-                editor.putString(ALIAS, s.toString());
+                editor.putString("BedRoomAlias", s.toString());
                 //editor.commit();
             }
         });
 
 
 
-        ////////////////////////////////////////////////////////////////////////// ADD /////////////////////////////////////////////////////////
 
         // ########################### Living Room ---------------------- CheckBox
         livingroom_check = (CheckBox)findViewById(R.id.checkBoxLivingroom);
@@ -232,17 +226,16 @@ public class SettingPage extends AppCompatActivity {
 
 
     public void commitSetting (View view){
-        editor.putBoolean("FirstRun", false); // เก็บค่าว่าเคย RUN แล้ว
-        editor.commit();
-        Toast.makeText(SettingPage.this, "Commit success!", Toast.LENGTH_SHORT).show();
+
+            editor.putBoolean("FirstRun", false); // เก็บค่าว่าเคย RUN แล้ว
+            editor.commit();
+            Intent intentSet = new Intent(this, RoomSelect.class);
+            startActivity(intentSet);
+            finish();
+
 
     }
 
-    public void backmainmenu (View view){
-        Intent intentMenu = new Intent(this, MainActivity.class);
-        startActivity(intentMenu);
-
-    }
 
 
 

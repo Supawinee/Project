@@ -43,7 +43,7 @@ public class Open extends AppCompatActivity implements View.OnClickListener{
                     startActivity(intentSet);
                 }
                 else {
-                    Intent intentOpen = new Intent(this, MainActivity.class);
+                    Intent intentOpen = new Intent(this, RoomSelect.class);
                     startActivity(intentOpen);
                 }
 

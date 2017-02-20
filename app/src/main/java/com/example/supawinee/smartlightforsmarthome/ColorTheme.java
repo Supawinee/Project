@@ -82,8 +82,7 @@ public class ColorTheme extends AppCompatActivity implements AdapterView.OnItemS
 
 
         //Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapterTheme = ArrayAdapter.createFromResource(this,
-        R.array.theme_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterTheme = ArrayAdapter.createFromResource(this, R.array.theme_array, R.layout.spinner_item);
         // Specify the layout to use when the list of choices appears
         adapterTheme.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner

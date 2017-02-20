@@ -104,25 +104,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.top_menus, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_setting:
-                Intent intentSetting = new Intent(this,SettingPage.class);
-                startActivity(intentSetting);
-                break;
-            default:
-                break;
-        }
-        return true;
-    }
 
 
 

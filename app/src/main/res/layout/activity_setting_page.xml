@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:fillViewport="false">
 
@@ -19,7 +20,7 @@
         tools:context="com.example.supawinee.smartlightforsmarthome.SettingPage">
 
         <TextView
-            android:text="App Settings"
+            android:text="Application Settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30dp"
@@ -34,7 +35,8 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#f7cd0a">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -60,7 +62,9 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:passwordToggleTint="#f7cd0a"
+                android:textColorHint="#f7cd0a">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -68,7 +72,6 @@
                     android:hint="KEY"
                     android:id="@+id/key_EditText"
                     android:inputType="textPassword"
-                    android:textColorHint="#f7cd0a"
                     android:backgroundTint="#f7cd0a"
                     android:textColor="#ffffff"
                     android:layout_marginLeft="4dp"
@@ -89,7 +92,9 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:passwordToggleTint="#f7cd0a"
+                android:textColorHint="#f7cd0a">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -108,23 +113,24 @@
 
 
         <TextView
-            android:text="Device Setting"
+            android:text="Device Settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
-            android:textColor="#5ca910"
+            android:textColor="#00C133"
             android:layout_weight="0.00" />
 
         <CheckBox
             android:text="BED ROOM"
-            android:textColor="#5ca910"
+            android:textColor="#99FF00"
             android:textSize="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBoxBedroom"
-            android:layout_weight="0.00" />
+            android:layout_weight="0.00"
+            android:buttonTint="#ffffff"/>
 
 
 
@@ -135,16 +141,16 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#E1FF00">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="BED ROOM DEVICE'S ALIAS"
+                    android:hint="Bed room device's alias"
                     android:id="@+id/alias_EditText"
                     android:inputType="text"
-                    android:textColorHint="#88fc17"
-                    android:backgroundTint="#88fc17"
+                    android:backgroundTint="#E1FF00"
                     android:textColor="#ffffff"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
@@ -161,12 +167,13 @@
 
         <CheckBox
             android:text="LIVING ROOM"
-            android:textColor="#5ca910"
+            android:textColor="#99FF00"
             android:textSize="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBoxLivingroom"
-            android:layout_weight="0.00" />
+            android:layout_weight="0.00"
+            android:buttonTint="#ffffff"/>
 
 
 
@@ -177,16 +184,16 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#E1FF00">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="LIVING ROOM DEVICE'S ALIAS"
+                    android:hint="Living room device's alias"
                     android:id="@+id/alias_Livingroom_EditText"
                     android:inputType="text"
-                    android:textColorHint="#88fc17"
-                    android:backgroundTint="#88fc17"
+                    android:backgroundTint="#E1FF00"
                     android:textColor="#ffffff"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
@@ -204,12 +211,13 @@
 
         <CheckBox
             android:text="WORKING ROOM"
-            android:textColor="#5ca910"
+            android:textColor="#99FF00"
             android:textSize="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBoxWorkingroom"
-            android:layout_weight="0.00" />
+            android:layout_weight="0.00"
+            android:buttonTint="#ffffff"/>
 
 
 
@@ -220,16 +228,16 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#E1FF00">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="WORKING ROOM DEVICE'S ALIAS"
+                    android:hint="Working room device's alias"
                     android:id="@+id/alias_Workingroom_EditText"
                     android:inputType="text"
-                    android:textColorHint="#88fc17"
-                    android:backgroundTint="#88fc17"
+                    android:backgroundTint="#E1FF00"
                     android:textColor="#ffffff"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
@@ -241,12 +249,13 @@
 
         <CheckBox
             android:text="DINING ROOM"
-            android:textColor="#5ca910"
+            android:textColor="#99FF00"
             android:textSize="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBoxDiningroom"
-            android:layout_weight="0.00" />
+            android:layout_weight="0.00"
+            android:buttonTint="#ffffff"/>
 
 
 
@@ -257,16 +266,16 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#E1FF00">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="DINING ROOM DEVICE'S ALIAS"
+                    android:hint="Dining room device's alias"
                     android:id="@+id/alias_Diningroom_EditText"
                     android:inputType="text"
-                    android:textColorHint="#88fc17"
-                    android:backgroundTint="#88fc17"
+                    android:backgroundTint="#E1FF00"
                     android:textColor="#ffffff"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
@@ -296,19 +305,10 @@
                 android:id="@+id/btn_commitSetting"
                 android:onClick="commitSetting"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#fac3fb"
-                android:textColor="#B03060"/>
+                android:background="#414141"
+                android:textColor="#ffffff"/>
 
-            <Button
-                android:text="MAIN MENU"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="backmainmenu"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="#fac3fb"
-                android:textColor="#B03060"/>
+
 
         </LinearLayout>
 

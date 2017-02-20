@@ -28,17 +28,21 @@
         android:layout_marginBottom="30dp">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/bedroomon"
-            android:layout_marginRight="10dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:src="@drawable/bedroomoff"
+            android:layout_margin="10dp"
+            android:onClick="click_BedRoom"
             android:id="@+id/imageBedroom" />
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/livingroomon2"
-            android:layout_marginLeft="10dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:src="@drawable/livingroomoff2"
+            android:layout_margin="10dp"
+            android:onClick="click_LivingRoom"
             android:id="@+id/imageLivingroom" />
 
 
@@ -51,18 +55,22 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/workingroomon"
-            android:layout_marginRight="10dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:src="@drawable/workingroomoff"
+            android:layout_margin="10dp"
+            android:onClick="click_WorkingRoom"
             android:id="@+id/imageWorkingroom" />
 
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/dinningroomon"
-            android:layout_marginLeft="10dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:src="@drawable/dinningroomoff"
+            android:layout_margin="10dp"
+            android:onClick="click_DiningRoom"
             android:id="@+id/imageDinningroom" />
 
 
